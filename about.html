@@ -4,193 +4,186 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Lesotho Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Reset & Base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f9f9f9;
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f4f8f5;
       color: #333;
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
     }
 
     /* Header */
     header {
-      background: #2a7b3f;
+      background: #2d6a4f;
+      padding: 15px 20px;
       color: white;
-      padding: 20px;
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      font-size: 28px;
-      font-weight: 700;
-    }
-
-    header p {
-      font-size: 16px;
-      margin-top: 5px;
-      font-weight: 400;
     }
 
     /* Navigation */
-    nav {
-      background: #40916c;
-    }
-
     nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       justify-content: center;
-      list-style: none;
-      padding: 10px 0;
+      background: #40916c;
       flex-wrap: wrap;
     }
-
     nav ul li {
       margin: 0 15px;
     }
-
     nav ul li a {
       color: white;
-      font-weight: 600;
-      padding: 8px 12px;
-      transition: background 0.3s ease, color 0.3s ease;
-      border-radius: 5px;
-    }
-
-    nav ul li a:hover {
-      background: #2a7b3f;
-      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 5px;
+      display: inline-block;
     }
 
     /* About Section */
     .about-section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 30px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
     .about-section h1 {
       text-align: center;
-      color: #2a7b3f;
+      color: #1b4332;
+      margin-bottom: 20px;
       font-size: 28px;
-      margin-bottom: 25px;
+    }
+    .about-section p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #444;
+      text-align: justify;
     }
 
-    .about-section p {
-      margin-bottom: 18px;
-      color: #555;
-      font-size: 16px;
+    /* Images */
+    .about-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+    .about-images img {
+      width: 48%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      object-fit: cover;
     }
 
     /* Objectives */
     .objectives {
-      margin-top: 35px;
+      margin-top: 30px;
     }
-
     .objectives h2 {
-      color: #2a7b3f;
-      margin-bottom: 15px;
+      color: #1b4332;
+      margin-bottom: 10px;
       font-size: 22px;
     }
-
     .objectives ul {
       list-style: none;
       padding: 0;
     }
-
     .objectives ul li {
       background: #e9f5ec;
-      margin: 10px 0;
-      padding: 15px;
-      border-left: 6px solid #2a7b3f;
-      border-radius: 8px;
+      margin: 8px 0;
+      padding: 12px;
+      border-left: 5px solid #2d6a4f;
+      border-radius: 5px;
       font-size: 15px;
-      transition: background 0.3s ease;
-    }
-
-    .objectives ul li:hover {
-      background: #d0ebd7;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      background: #2a7b3f;
+      background: #2d6a4f;
       color: white;
-      padding: 20px;
+      padding: 15px;
       margin-top: 40px;
       font-size: 14px;
     }
 
-    footer a {
-      color: #ffd700;
-      font-weight: 600;
+    /* 📱 Responsiveness */
+    @media (max-width: 1024px) {
+      .about-images img {
+        width: 47%;
+      }
+    }
+    @media (max-width: 768px) {
+      nav ul { flex-direction: column; }
+      nav ul li { margin: 10px 0; }
+      .about-images img { width: 100%; }
+      .about-section { padding: 15px; }
+    }
+    @media (max-width: 480px) {
+      header h1 { font-size: 22px; }
+      .about-section h1 { font-size: 22px; }
+      .about-section p { font-size: 14px; }
+      footer { font-size: 12px; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <h1>Lesotho Hub</h1>
-    <p>Empowering Agriculture, Livestock & Communities</p>
+    <p>Connecting Farmers to the Market</p>
   </header>
 
-  <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="business.html">Businesses</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="tips.html">Tips</a></li>
     </ul>
   </nav>
 
-  <!-- About Section -->
   <section class="about-section">
-    <h1>About Us</h1>
+    <h1>About Lesotho Hub</h1>
     <p>
-      At <strong>Lesotho Hub</strong>, we are committed to supporting farmers, livestock keepers, and agricultural
-      entrepreneurs by providing resources, knowledge, and opportunities to grow. Our mission is to empower local
-      communities and promote sustainable development in farming, poultry, and crop production.
+      <strong>Lesotho Hub</strong> is a digital platform created to empower <strong>livestock, poultry, and crop farmers</strong> across Lesotho.  
+      Our goal is to provide a reliable online marketplace where farmers can advertise their products, connect with buyers, 
+      and strengthen agricultural trade in the country. We bring together small-scale farmers, agribusinesses, and consumers 
+      to create a stronger agricultural economy that benefits everyone.
+    </p>
+    <p>
+      Agriculture is the backbone of Lesotho’s economy, and through this hub, we aim to bridge the gap between farmers and 
+      consumers by offering a transparent and user-friendly space for business growth. Beyond connecting markets, we also 
+      promote <em>capacity building</em> by sharing resources, modern farming techniques, and innovative solutions to 
+      challenges faced by farmers. This ensures that both traditional and young farmers are included in shaping the future 
+      of agriculture in Lesotho.
     </p>
 
-    <p>
-      We believe in building strong networks that connect farmers with the right tools, markets, and partners to
-      improve productivity and enhance livelihoods across Lesotho.
-    </p>
+    <!-- Two Pictures -->
+    <div class="about-images">
+      <img src="77k.jpg" alt="Lesotho farming landscape">
+      <img src="Beans2010.jpg" alt="Farmers working in Lesotho">
+    </div>
 
-    <!-- Objectives -->
     <div class="objectives">
       <h2>Our Objectives</h2>
       <ul>
-        <li>Promote modern farming practices and technology adoption.</li>
-        <li>Support poultry and livestock farmers with expert advice.</li>
-        <li>Create platforms to market and sell agricultural products.</li>
-        <li>Foster community growth through knowledge sharing and training.</li>
-        <li>Encourage sustainable and eco-friendly agricultural methods.</li>
+        <li>Promote locally produced livestock, poultry, and crop products.</li>
+        <li>Enable farmers to reach more customers through digital access.</li>
+        <li>Encourage fair pricing and transparency in agricultural markets.</li>
+        <li>Provide a platform for young entrepreneurs in farming.</li>
+        <li>Support food security and sustainable farming practices in Lesotho.</li>
       </ul>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Lesotho Hub. All Rights Reserved. | Designed with ❤️ for the community.</p>
+    <p>&copy; 2025 Lesotho Hub. All Rights Reserved.</p>
   </footer>
 </body>
 </html>
