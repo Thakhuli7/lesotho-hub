@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesotho Hub — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2a7b3f;
+      --accent: #8BC34A;
+      --dark: #1f2937;
+      --light: #f9fafb;
+      --muted: #6b7280;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+
+    /* HEADER */
+    header.site-header {
+      background: #fff;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+    }
+
+    .logo img { height: 50px; }
+
+    nav.main-nav a {
+      margin: 0 0.8rem;
+      font-weight: 600;
+      color: var(--dark);
+      transition: color 0.3s ease;
+    }
+
+    nav.main-nav a:hover { color: var(--accent); }
+
+    .menu-toggle { display: none; font-size: 1.6rem; background: none; border: none; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+      padding: 4rem 1rem;
+      text-align: center;
+      background: linear-gradient(rgba(42,123,63,0.8), rgba(42,123,63,0.8)), url('assets/placeholder.jpg') center/cover no-repeat;
+      color: #fff;
+      border-radius: var(--radius);
+      margin: 1rem 0;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .hero:hover { transform: translateY(-3px); }
+
+    .hero h1 { font-size: clamp(2rem,4vw,2.8rem); margin-bottom: 1rem; font-weight: 700; }
+    .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; }
+
+    /* SEARCH BAR */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .search-container:hover { transform: translateY(-2px); }
+
+    .search-container input {
+      border: none;
+      outline: none;
+      padding: 0.6rem;
+      font-size: 1rem;
+      flex: 1;
+    }
+
+    .search-container button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .search-container button:hover { background: #689f38; }
+
+    /* SECTIONS */
+    h2 { margin: 2rem 0 1rem; font-size: 1.8rem; color: var(--primary); font-weight: 700; text-align: center; }
+
+    .grid { display: grid; gap: 1.5rem; }
+
+    .categories-grid { grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
+    .products-grid { grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+
+    /* CARD STYLES */
+    .card, .product {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: block;
+    }
+
+    .card:hover, .product:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+
+    .card img, .product img { width: 100%; height: 180px; object-fit: cover; }
+
+    .card h3 { margin: 0.6rem 0; color: var(--accent); font-size: 1.2rem; font-weight: 700; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+
+    .product h3 { margin: 0.4rem 0; color: var(--dark); font-size: 1.2rem; font-weight: 700; }
+    .product p { font-size: 0.95rem; color: var(--muted); }
+    .price { color: var(--accent); font-weight: 700; font-size: 1.05rem; }
+
+    /* FOOTER */
+    footer.site-footer {
+      padding: 1.5rem 0;
+      text-align: center;
+      background: var(--dark);
+      color: #fff;
+      margin-top: 3rem;
+      border-radius: var(--radius) var(--radius) 0 0;
+      font-size: 0.95rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px){
+      .header-inner { flex-wrap: wrap; }
+      .main-nav { display: none; width: 100%; text-align: center; margin-top: 0.5rem; }
+      .main-nav a { display: block; padding: 0.6rem 0; }
+      .menu-toggle { display: block; }
+
+      .search-container { flex-direction: column; gap: 0.6rem; }
+      .search-container input, .search-container button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/logo.png" alt="Lesotho Hub logo"/></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="business.html">Business</a>
+        <a href="tips.html">Tips</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome to Lesotho Hub</h1>
+      <p>Discover local farms — from livestock and poultry to crops — and connect directly with farmers for fresh, affordable produce. 🌱</p>
+
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for farmers, crops, livestock...">
+        <button id="searchBtn">Find Farmers</button>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+      <h2>Farmer Categories</h2>
+      <div class="grid categories-grid">
+        <a class="card" href="business.html?category=livestock">
+          <img src="cow4.webp" alt="Livestock">
+          <h3>Livestock Farmers</h3>
+          <p>Beef, goats, sheep — farm-fresh meat and by-products.</p>
+        </a>
+        <a class="card" href="business.html?category=poultry">
+          <img src="OIP.webp" alt="Poultry">
+          <h3>Poultry Farmers</h3>
+          <p>Chickens, eggs, and other poultry products direct from farms.</p>
+        </a>
+        <a class="card" href="business.html?category=crops">
+          <img src="Beans2010.jpg" alt="Crops">
+          <h3>Crops Farmers</h3>
+          <p>Maize, beans, vegetables and seasonal harvests.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured">
+      <h2>Featured Businesses</h2>
+      <div class="grid products-grid">
+        <article class="product">
+          <img src="cow 472.avif" alt="Maseru Livestock">
+          <h3>Maseru Livestock</h3>
+          <p>Grass-fed cattle, goats, and sheep.</p>
+          <p class="price">From M1500 per cow</p>
+        </article>
+        <article class="product">
+          <img src="o127.webp" alt="Thaba Poultry">
+          <h3>Thaba Poultry</h3>
+          <p>Farm-fresh eggs and broiler chickens.</p>
+          <p class="price">M35 per tray of eggs</p>
+        </article>
+        <article class="product">
+          <img src="maize.webp" alt="Leribe Crops">
+          <h3>Leribe Crops</h3>
+          <p>Organic maize, beans, and vegetables.</p>
+          <p class="price">M120 per 10kg maize</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Lesotho Hub — Empowering farmers across Lesotho</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.style.display !== 'block';
+      nav.style.display = open ? 'block' : 'none';
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // Search button redirect
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      const term = document.getElementById('searchInput').value.trim();
+      if(term){
+        window.location.href = "business.html?search=" + encodeURIComponent(term);
+      } else {
+        alert("Please enter a search term.");
+      }
+    });
+  </script>
+</body>
+</html>
