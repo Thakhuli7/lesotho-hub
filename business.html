@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesotho Hub - Business Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #2a7b3f;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+
+    /* Business Intro */
+    .business-intro {
+      background: #fff;
+      max-width: 1100px;
+      margin: 30px auto;
+      border-radius: 12px;
+      display: flex;
+      gap: 30px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .business-intro:hover {
+      transform: translateY(-5px);
+    }
+
+    .business-intro img {
+      width: 250px;
+      height: 250px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .business-intro h2 {
+      font-size: 28px;
+      color: #2a7b3f;
+      margin-bottom: 15px;
+    }
+
+    .business-intro p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* Products */
+    .products {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .products h3 {
+      font-size: 26px;
+      color: #2a7b3f;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h4 {
+      font-size: 18px;
+      color: #2a7b3f;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .product-card .price {
+      font-weight: 700;
+      color: #d9534f;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: #2a7b3f;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .business-intro {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .business-intro img {
+        width: 100%;
+        height: auto;
+      }
+
+      nav a {
+        margin: 10px 10px 0 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      .business-intro h2 {
+        font-size: 22px;
+      }
+
+      .products h3 {
+        font-size: 22px;
+      }
+
+      .product-card h4 {
+        font-size: 16px;
+      }
+
+      .product-card .price {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lesotho Hub</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="business.html">Businesses</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="tips.html">Tips</a>
+    </nav>
+  </header>
+
+  <!-- Business Intro -->
+  <section class="business-intro">
+    <img src="77k.jpg" alt="Farm Image">
+    <div>
+      <h2>THAKHULI MALOFO Livestock Farm</h2>
+      <p>We specialize in high-quality cattle, goats, and sheep. Our farm ensures organic feeding and best practices in animal care to bring fresh and healthy meat to the market.</p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products">
+    <h3>Our Products</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="cow2.webp" alt="Cow">
+        <h4>Brahman Cow</h4>
+        <p>Healthy and well-fed.</p>
+        <p class="price">M12,000</p>
+      </div>
+      <div class="product-card">
+        <img src="GOAT 12.jpg" alt="Goat">
+        <h4>Boer Goat</h4>
+        <p>Strong breed, ideal for meat, mohair.</p>
+        <p class="price">M2,000</p>
+      </div>
+      <div class="product-card">
+        <img src="OIP.webp" alt="Chicken">
+        <h4>Free-range Chicken</h4>
+        <p>Fresh and organic.</p>
+        <p class="price">M80</p>
+      </div>
+      <div class="product-card">
+        <img src="maize.webp" alt="Maize">
+        <h4>Maize (50kg)</h4>
+        <p>High-quality harvest.</p>
+        <p class="price">M350</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Lesotho Hub. All rights reserved.</p>
+  </footer>
+</body>
+</html>
